@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #0d0d0d; /* Fondo negro profundo */
+            background-color: #0d0d0d;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -25,27 +25,27 @@
 
         .container {
             width: 100%;
-            max-width: 450px; /* Tamaño perfecto para pantallas de celular */
+            max-width: 450px;
             text-align: center;
             padding: 10px;
         }
 
-        /* Estilo premium para el Logo */
+        /* Logo Oficial */
         .logo-img {
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 15px auto;
-            border: 2px solid #d4af37; /* Borde dorado */
-            box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35); /* Brillo sutil */
+            margin: 0 auto 18px auto;
+            border: 2px solid #d4af37;
+            box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35);
             background-color: #1a1a1a;
             display: block;
         }
 
         h1 {
             font-size: 24px;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-bottom: 8px;
             color: #f5f5f5;
             font-weight: 700;
@@ -59,62 +59,60 @@
             line-height: 1.4;
         }
 
+        /* Títulos de sección con más espaciado (Estilizados) */
         .section-title {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #d4af37; /* Dorado */
-            margin: 25px 0 14px 0;
+            letter-spacing: 5px; /* Más aire entre letras */
+            color: #d4af37;
+            margin: 30px 0 14px 0;
             text-align: left;
             padding-left: 5px;
             font-weight: 600;
         }
 
-        /* Botones de acción general */
-        .btn {
+        /* Botones Principales en Dorado Premium */
+        .btn-gold {
             display: block;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
+            color: #0d0d0d; /* Texto oscuro para contraste */
             text-decoration: none;
             padding: 16px;
             margin-bottom: 14px;
             border-radius: 12px;
             font-size: 15px;
-            font-weight: 600;
-            border: 1px solid #2d2d2d;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0px 4px 18px rgba(212, 175, 55, 0.2);
             transition: all 0.25s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Botón de Instagram Oficial */
-        .btn-instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            border: none;
-            box-shadow: 0px 4px 15px rgba(193, 53, 132, 0.2);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        /* Botón de WhatsApp Principal */
-        .btn-whatsapp-principal {
-            background-color: #25D366;
-            color: #000000;
-            border: none;
-            box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.2);
-        }
-
-        /* Efecto al presionar botones en celular */
-        .btn:active {
+        /* Efecto al presionar botones */
+        .btn-gold:active, .btn-perfume:active {
             transform: scale(0.97);
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes del Catálogo */
+        /* Tarjetas de Perfumes */
         .btn-perfume {
-            border-left: 4px solid #d4af37; /* Borde izquierdo dorado premium */
+            display: block;
+            background-color: #161616;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 14px;
+            border-radius: 12px;
+            border: 1px solid #252525;
+            border-left: 4px solid #d4af37;
             text-align: left;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 12px 16px;
+            transition: all 0.25s ease;
         }
 
         .perfume-info {
@@ -123,14 +121,15 @@
             gap: 14px;
         }
 
-        /* Miniatura de perfume redonda y elegante */
+        /* Miniatura de perfume limpia y optimizada */
         .perfume-thumb {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 8px;
-            object-fit: cover;
-            background-color: #1a1a1a;
-            border: 1px solid #3d3d3d;
+            object-fit: contain; /* Ajusta la botella sin recortarla bruscamente */
+            background-color: #0a0a0a;
+            border: 1px solid #2d2d2d;
+            padding: 2px;
         }
 
         .perfume-name {
@@ -139,23 +138,17 @@
             font-weight: 600;
         }
 
-        /* Botón interno de consulta rápida */
+        /* Tag de consulta */
         .btn-action-tag {
             font-size: 12px;
             color: #d4af37;
-            background-color: #262626;
+            background-color: #222222;
             padding: 6px 12px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 0.5px;
-            border: 1px solid #3d3d3d;
+            border: 1px solid #3a3a3a;
             white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .btn-perfume:active .btn-action-tag {
-            background-color: #d4af37;
-            color: #000000;
         }
     </style>
 </head>
@@ -169,14 +162,18 @@
         <p class="bio">Perfumes 100% originales en formato decant.<br>Envíos garantizados a todo Chile. ✨</p>
 
         <div class="section-title">Canales Oficiales</div>
-        <a href="https://www.instagram.com/fixparfum.cl?igsh=MTNnbmRyMjMweW1jNQ==" target="_blank" class="btn btn-instagram">📸 Síguenos en Instagram</a>
-        <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20una%20consulta%20general." target="_blank" class="btn btn-whatsapp-principal">💬 WhatsApp Directo</a>
+        <a href="https://www.instagram.com/fixparfum.cl?igsh=MTNnbmRyMjMweW1jNQ==" target="_blank" class="btn-gold">
+            📸 Síguenos en Instagram
+        </a>
+        <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20una%20consulta%20general." target="_blank" class="btn-gold">
+            💬 WhatsApp Directo
+        </a>
 
         <div class="section-title">Catálogo / Consultar Disponibilidad</div>
         
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
+                <img src="https://i.ibb.co/LvsC4m8S/jpg-le-male-elixir-clean.png" alt="JPG Le Male Elixir" class="perfume-thumb">
                 <span class="perfume-name">JPG Le Male Elixir</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
@@ -184,7 +181,7 @@
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
+                <img src="https://i.ibb.co/v4mYp0f3/lattafa-asad-clean.png" alt="Lattafa Asad" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Asad</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
@@ -192,7 +189,7 @@
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
+                <img src="https://i.ibb.co/KzM5Xq9c/lattafa-amethyst-clean.png" alt="Lattafa Amethyst" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Amethyst</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
