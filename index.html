@@ -30,21 +30,17 @@
             padding: 10px;
         }
 
-        /* Logo circular premium */
-        .logo-placeholder {
-            width: 95px;
-            height: 95px;
-            background: linear-gradient(135deg, #d4af37, #aa841c);
+        /* Estilo premium para el Logo */
+        .logo-img {
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            margin: 0 auto 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 26px;
-            color: #000000;
-            box-shadow: 0px 6px 20px rgba(212, 175, 55, 0.25);
-            letter-spacing: 1px;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            border: 2px solid #d4af37; /* Borde dorado */
+            box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35); /* Brillo sutil */
+            background-color: #1a1a1a;
+            display: block;
         }
 
         h1 {
@@ -53,12 +49,13 @@
             margin-bottom: 8px;
             color: #f5f5f5;
             font-weight: 700;
+            text-transform: uppercase;
         }
 
         .bio {
             font-size: 14px;
             color: #aaaaaa;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             line-height: 1.4;
         }
 
@@ -67,13 +64,13 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             color: #d4af37; /* Dorado */
-            margin: 30px 0 12px 0;
+            margin: 25px 0 14px 0;
             text-align: left;
             padding-left: 5px;
             font-weight: 600;
         }
 
-        /* Botones de acción */
+        /* Botones de acción general */
         .btn {
             display: block;
             background-color: #1a1a1a;
@@ -81,11 +78,11 @@
             text-decoration: none;
             padding: 16px;
             margin-bottom: 14px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 15px;
             font-weight: 600;
             border: 1px solid #2d2d2d;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         /* Botón de Instagram Oficial */
@@ -93,6 +90,7 @@
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
             border: none;
             box-shadow: 0px 4px 15px rgba(193, 53, 132, 0.2);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         /* Botón de WhatsApp Principal */
@@ -103,30 +101,61 @@
             box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.2);
         }
 
-        /* Comportamiento al presionar botones en celular */
+        /* Efecto al presionar botones en celular */
         .btn:active {
             transform: scale(0.97);
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* Botones del Catálogo de Perfumes */
+        /* Tarjetas de Perfumes del Catálogo */
         .btn-perfume {
-            border-left: 4px solid #d4af37; /* Detalle de lujo en el borde izquierdo */
+            border-left: 4px solid #d4af37; /* Borde izquierdo dorado premium */
             text-align: left;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
         }
 
-        .btn-perfume span {
-            font-size: 13px;
+        .perfume-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Miniatura de perfume redonda y elegante */
+        .perfume-thumb {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: #1a1a1a;
+            border: 1px solid #3d3d3d;
+        }
+
+        .perfume-name {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Botón interno de consulta rápida */
+        .btn-action-tag {
+            font-size: 12px;
             color: #d4af37;
             background-color: #262626;
-            padding: 5px 12px;
+            padding: 6px 12px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 0.5px;
             border: 1px solid #3d3d3d;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .btn-perfume:active .btn-action-tag {
+            background-color: #d4af37;
+            color: #000000;
         }
     </style>
 </head>
@@ -134,7 +163,8 @@
 
     <div class="container">
         
-        <div class="logo-placeholder">FP</div>
+        <img src="https://i.ibb.co/tTTyTBzB/file-00000000834071f5b7fff06eb67ee5e1.png" alt="FIXPARFUM Logo" class="logo-img">
+        
         <h1>FIXPARFUM</h1>
         <p class="bio">Perfumes 100% originales en formato decant.<br>Envíos garantizados a todo Chile. ✨</p>
 
@@ -142,22 +172,30 @@
         <a href="https://www.instagram.com/fixparfum.cl?igsh=MTNnbmRyMjMweW1jNQ==" target="_blank" class="btn btn-instagram">📸 Síguenos en Instagram</a>
         <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20una%20consulta%20general." target="_blank" class="btn btn-whatsapp-principal">💬 WhatsApp Directo</a>
 
-        <div class="section-title">Catálogo y Precios</div>
+        <div class="section-title">Catálogo / Consultar Disponibilidad</div>
         
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20comprar%20el%20decant%20de%20JPG%20Le%20Male%20Elixir%20de%203ml%20($7.200)" target="_blank" class="btn btn-perfume">
-            JPG Le Male Elixir (3ml) <span>$7.200</span>
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume">
+            <div class="perfume-info">
+                <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
+                <span class="perfume-name">JPG Le Male Elixir</span>
+            </div>
+            <span class="btn-action-tag">Consultar</span>
         </a>
 
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20comprar%20el%20decant%20de%20JPG%20Le%20Male%20Elixir%20de%205ml%20($11.500)" target="_blank" class="btn btn-perfume">
-            JPG Le Male Elixir (5ml) <span>$11.500</span>
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume">
+            <div class="perfume-info">
+                <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
+                <span class="perfume-name">Lattafa Asad</span>
+            </div>
+            <span class="btn-action-tag">Consultar</span>
         </a>
 
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20comprar%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst%20de%205ml%20($4.500)" target="_blank" class="btn btn-perfume">
-            Lattafa Amethyst (5ml) <span>$4.500</span>
-        </a>
-
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20comprar%20el%20decant%20de%20Lattafa%20Asad%20de%205ml%20($4.200)" target="_blank" class="btn btn-perfume">
-            Lattafa Asad (5ml) <span>$4.200</span>
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume">
+            <div class="perfume-info">
+                <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
+                <span class="perfume-name">Lattafa Amethyst</span>
+            </div>
+            <span class="btn-action-tag">Consultar</span>
         </a>
 
     </div>
