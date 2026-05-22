@@ -6,19 +6,72 @@
     <title>FIXPARFUM - Enlaces Oficiales</title>
     <style>
         /* Estilos base con estética Luxury Dark */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #0d0d0d; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .container { width: 100%; max-width: 450px; text-align: center; padding: 10px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            padding: 10px;
+        }
 
         /* Logo Oficial */
-        .logo-img { width: 115px; height: 115px; border-radius: 50%; object-fit: cover; margin: 0 auto 18px auto; border: 2px solid #d4af37; box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35); background-color: #1a1a1a; display: block; }
-        h1 { font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; color: #f5f5f5; font-weight: 700; text-transform: uppercase; }
-        .bio { font-size: 14px; color: #aaaaaa; margin-bottom: 30px; line-height: 1.4; }
+        .logo-img {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 18px auto;
+            border: 2px solid #d4af37;
+            box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35);
+            background-color: #1a1a1a;
+            display: block;
+        }
+
+        h1 {
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+            color: #f5f5f5;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
 
         /* Títulos de sección Estilizados */
-        .section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 5px; color: #d4af37; margin: 30px 0 14px 0; text-align: left; padding-left: 5px; font-weight: 600; }
+        .section-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #d4af37;
+            margin: 30px 0 14px 0;
+            text-align: left;
+            padding-left: 5px;
+            font-weight: 600;
+        }
 
-        /* Botones Principales en Dorado Premium (Mejorados) */
+        /* Botones Principales en Dorado Premium */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -37,24 +90,71 @@
             align-items: center;
             gap: 8px;
         }
-        .btn-gold:active, .btn-perfume:active { transform: scale(0.97); opacity: 0.95; }
+
+        .btn-gold:active, .btn-perfume:active {
+            transform: scale(0.97);
+            opacity: 0.95;
+        }
 
         /* Tarjetas de Perfumes */
         .btn-perfume {
-            display: block; background-color: #161616; color: #ffffff; text-decoration: none; margin-bottom: 14px; border-radius: 12px; border: 1px solid #252525; border-left: 4px solid #d4af37; text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; transition: all 0.25s ease;
+            display: block;
+            background-color: #161616;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 14px;
+            border-radius: 12px;
+            border: 1px solid #252525;
+            border-left: 4px solid #d4af37;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            transition: all 0.25s ease;
         }
-        .perfume-info { display: flex; align-items: center; gap: 14px; }
-        
-        /* Miniatura de perfume limpia y optimizada (¡Aquí está la corrección visual!) */
+
+        .perfume-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Miniatura de perfume garantizada */
         .perfume-thumb {
-            width: 48px; height: 48px; border-radius: 8px; object-fit: contain; background-color: #0a0a0a; border: 1px solid #2d2d2d; padding: 2px;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: contain;
+            background-color: #0d0d0d;
+            border: 1px solid #2d2d2d;
+            padding: 3px;
         }
-        .perfume-name { font-size: 14px; color: #ffffff; font-weight: 600; }
-        .btn-action-tag { font-size: 12px; color: #d4af37; background-color: #222222; padding: 6px 12px; border-radius: 6px; font-weight: bold; letter-spacing: 0.5px; border: 1px solid #3a3a3a; white-space: nowrap; }
+
+        .perfume-name {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Tag de consulta */
+        .btn-action-tag {
+            font-size: 12px;
+            color: #d4af37;
+            background-color: #222222;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border: 1px solid #3a3a3a;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
+        
         <img src="https://i.ibb.co/tTTyTBzB/file-00000000834071f5b7fff06eb67ee5e1.png" alt="FIXPARFUM Logo" class="logo-img">
         
         <h1>FIXPARFUM</h1>
@@ -68,7 +168,7 @@
         
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/68v8g9x/jpg-le-male-elixir-clean-fixed.png" alt="JPG Le Male Elixir" class="perfume-thumb">
+                <img src="https://images.unsplash.com/photo-1695677843467-33a7f804599a?auto=format&fit=crop&w=150&q=80" alt="JPG Le Male Elixir" class="perfume-thumb">
                 <span class="perfume-name">JPG Le Male Elixir</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
@@ -76,7 +176,7 @@
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/D8mYj2D/lattafa-asad-clean-fixed.png" alt="Lattafa Asad" class="perfume-thumb">
+                <img src="https://images.unsplash.com/photo-1615396899839-c99c121888b0?auto=format&fit=crop&w=150&q=80" alt="Lattafa Asad" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Asad</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
@@ -84,11 +184,13 @@
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/Qj8JkG0/lattafa-amethyst-clean-fixed.png" alt="Lattafa Amethyst" class="perfume-thumb">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=150&q=80" alt="Lattafa Amethyst" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Amethyst</span>
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
+
     </div>
+
 </body>
 </html>
