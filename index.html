@@ -113,17 +113,17 @@
             font-weight: 500;
         }
 
-        /* Títulos de Subcategorías (Diseñador / Árabe) */
+        /* Títulos de Subcategorías Mejorados (Letra más grande y estilizada) */
         .category-subtitle {
-            font-size: 11px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: #d4af37;
             text-align: left;
-            padding-left: 8px;
-            margin: 22px 0 12px 0;
-            font-weight: 600;
-            border-left: 2px solid #d4af37;
+            padding-left: 10px;
+            margin: 28px 0 14px 0;
+            font-weight: 700;
+            border-left: 3px solid #d4af37;
         }
 
         /* Botones Dorados Principales */
@@ -187,6 +187,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            flex-grow: 1; /* Permite que la info use el espacio necesario */
         }
 
         .perfume-thumb {
@@ -225,7 +226,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Tag de consulta DISPONIBLE */
+        /* Tag de consulta DISPONIBLE (Alineado estrictamente a la derecha) */
         .btn-action-tag {
             font-size: 12px;
             color: #d4af37;
@@ -236,6 +237,7 @@
             letter-spacing: 0.5px;
             border: 1px solid #d4af37;
             white-space: nowrap;
+            margin-left: auto; /* Empuja el botón al borde derecho de la tarjeta */
         }
 
         /* Tag especial para AGOTADO */
@@ -249,6 +251,16 @@
             letter-spacing: 0.5px;
             border: 1px solid #444444;
             white-space: nowrap;
+            margin-left: auto;
+        }
+
+        /* Sutil Línea Separadora entre Categorías */
+        .section-separator {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+            margin: 30px auto 15px auto;
+            width: 90%;
         }
 
         /* Pie de página (Footer) */
@@ -358,6 +370,7 @@
             <span class="btn-sold-out-tag">Agotado</span>
         </div>
 
+        <hr class="section-separator">
 
         <div class="category-subtitle">Árabe</div>
 
