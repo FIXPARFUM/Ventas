@@ -43,11 +43,12 @@
             display: block;
         }
 
+        /* Título Principal ahora en Dorado Elegante */
         h1 {
             font-size: 24px;
             letter-spacing: 4px;
             margin-bottom: 8px;
-            color: #f5f5f5;
+            color: #d4af37; /* Cambio a Dorado */
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -88,7 +89,31 @@
             font-weight: 600;
         }
 
-        /* Botones Principales en Dorado Premium con Centrado Perfecto */
+        /* Título de Catálogo Mejorado en Dos Líneas para Evitar Cortes */
+        .catalog-title-container {
+            margin: 30px 0 16px 0;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .catalog-main-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #d4af37;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .catalog-sub-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #888888; /* Un gris más tenue para jerarquía visual */
+            font-weight: 500;
+        }
+
+        /* Botones Principales en Dorado Premium */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -103,7 +128,7 @@
             box-shadow: 0px 4px 18px rgba(212, 175, 55, 0.2);
             transition: all 0.25s ease;
             display: flex;
-            justify-content: center; /* Centrado horizontal perfecto */
+            justify-content: center;
             align-items: center;
             gap: 8px;
         }
@@ -178,7 +203,7 @@
 
         <div class="marquee-container">
             <marquee behavior="scroll" direction="left" scrollamount="3" class="marquee-text">
-                ✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM CHILE ✨
+                ✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM ✨
             </marquee>
         </div>
 
@@ -190,7 +215,10 @@
             💬 WhatsApp Directo
         </a>
 
-        <div class="section-title">Catálogo / Consultar Disponibilidad</div>
+        <div class="catalog-title-container">
+            <div class="catalog-main-title">Catálogo</div>
+            <div class="catalog-sub-title">Consultar Disponibilidad</div>
+        </div>
         
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume">
             <div class="perfume-info">
