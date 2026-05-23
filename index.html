@@ -167,6 +167,7 @@
 
         /* COLORES PERSONALIZADOS PARA EL CATÁLOGO */
         .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; }
+        .perfume-gucci { background-color: #141414; border: 1px solid #242424; border-left: 4px solid #9c9c9c; }
         .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; }
         .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; }
         .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; }
@@ -177,9 +178,9 @@
 
         /* Clase especial para productos AGOTADOS */
         .sold-out {
-            opacity: 0.45; /* Lo vuelve más opaco y sutil */
+            opacity: 0.45;
             cursor: not-allowed;
-            pointer-events: none; /* Evita que hagan clic */
+            pointer-events: none;
         }
 
         .perfume-info {
@@ -196,10 +197,32 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* Contenedor de textos del perfume */
+        .perfume-text-details {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
         .perfume-name {
             font-size: 14px;
             color: #ffffff;
             font-weight: 600;
+        }
+
+        /* Lista de precios sutil debajo del nombre */
+        .perfume-prices {
+            font-size: 11px;
+            color: #aaaaaa;
+            letter-spacing: 0.5px;
+        }
+
+        /* Alerta de reposición sutil */
+        .restock-alert {
+            font-size: 10px;
+            color: #d4af37;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         /* Tag de consulta DISPONIBLE */
@@ -226,6 +249,23 @@
             letter-spacing: 0.5px;
             border: 1px solid #444444;
             white-space: nowrap;
+        }
+
+        /* Pie de página (Footer) */
+        .footer-separator {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            margin: 40px auto 20px auto;
+            width: 80%;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            padding: 0 15px 20px 15px;
         }
     </style>
 </head>
@@ -262,33 +302,60 @@
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume perfume-jpg">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
-                <span class="perfume-name">JPG Le Male Elixir</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">JPG Le Male Elixir</span>
+                    <span class="perfume-prices">3ml: $7.200 | 5ml: $11.500 | 10ml: $20.500</span>
+                </div>
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
 
-        <div class="btn btn-perfume perfume-theone sold-out">
+        <div class="btn btn-perfume perfume-gucci sold-out">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
-                <span class="perfume-name">D&G The One EDP</span>
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=120&auto=format&fit=crop" alt="Gucci Guilty" class="perfume-thumb">
+                <div class="perfume-text-details">
+                    <span class="perfume-name">Gucci Guilty EDT</span>
+                    <span class="perfume-prices">3ml: $5.400 | 5ml: $8.700 | 10ml: $15.300</span>
+                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
             </div>
-            <span class="btn-sold-out-tag">Agotado 🔒</span>
+            <span class="btn-sold-out-tag">Agotado</span>
         </div>
 
         <div class="btn btn-perfume perfume-sauvage sold-out">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/sd9NfLRS/file-00000000cdd471f5b141fde907031e69.png" alt="Dior Sauvage EDT" class="perfume-thumb">
-                <span class="perfume-name">Dior Sauvage EDT</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">Dior Sauvage EDT</span>
+                    <span class="perfume-prices">3ml: $6.500 | 5ml: $10.800 | 10ml: $19.000</span>
+                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
             </div>
-            <span class="btn-sold-out-tag">Agotado 🔒</span>
+            <span class="btn-sold-out-tag">Agotado</span>
+        </div>
+
+        <div class="btn btn-perfume perfume-theone sold-out">
+            <div class="perfume-info">
+                <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
+                <div class="perfume-text-details">
+                    <span class="perfume-name">D&G The One EDP</span>
+                    <span class="perfume-prices">3ml: $4.500 | 5ml: $7.500 | 10ml: $12.800</span>
+                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+            </div>
+            <span class="btn-sold-out-tag">Agotado</span>
         </div>
 
         <div class="btn btn-perfume perfume-k sold-out">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
-                <span class="perfume-name">D&G K EDP</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">D&G K EDP</span>
+                    <span class="perfume-prices">3ml: $4.300 | 5ml: $6.900 | 10ml: $11.800</span>
+                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
             </div>
-            <span class="btn-sold-out-tag">Agotado 🔒</span>
+            <span class="btn-sold-out-tag">Agotado</span>
         </div>
 
 
@@ -297,7 +364,10 @@
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
-                <span class="perfume-name">Lattafa Asad</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">Lattafa Asad</span>
+                    <span class="perfume-prices">5ml: $4.200 | 10ml: $7.000</span>
+                </div>
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
@@ -305,7 +375,10 @@
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume perfume-amethyst">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
-                <span class="perfume-name">Lattafa Amethyst</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">Lattafa Amethyst</span>
+                    <span class="perfume-prices">5ml: $4.500 | 10ml: $7.500</span>
+                </div>
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
@@ -313,9 +386,13 @@
         <div class="btn btn-perfume perfume-khamrah sold-out">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
-                <span class="perfume-name">Lattafa Khamrah</span>
+                <div class="perfume-text-details">
+                    <span class="perfume-name">Lattafa Khamrah</span>
+                    <span class="perfume-prices">5ml: $6.000 | 10ml: $10.200</span>
+                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
             </div>
-            <span class="btn-sold-out-tag">Agotado 🔒</span>
+            <span class="btn-sold-out-tag">Agotado</span>
         </div>
 
 
