@@ -77,7 +77,7 @@
             text-transform: uppercase;
         }
 
-        /* Títulos de sección */
+        /* Títulos de sección de Canales */
         .section-title {
             font-size: 11px;
             text-transform: uppercase;
@@ -89,9 +89,9 @@
             font-weight: 600;
         }
 
-        /* Título de Catálogo */
+        /* Título de Catálogo General */
         .catalog-title-container {
-            margin: 30px 0 16px 0;
+            margin: 30px 0 10px 0;
             text-align: left;
             padding-left: 5px;
         }
@@ -111,6 +111,19 @@
             letter-spacing: 3px;
             color: #888888;
             font-weight: 500;
+        }
+
+        /* Títulos de Subcategorías (Diseñador / Árabe) */
+        .category-subtitle {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #d4af37;
+            text-align: left;
+            padding-left: 8px;
+            margin: 18px 0 10px 0;
+            font-weight: 600;
+            border-left: 2px solid #d4af37;
         }
 
         /* Botones Dorados Principales */
@@ -142,7 +155,7 @@
         .btn-perfume {
             display: block;
             text-decoration: none;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             border-radius: 12px;
             text-align: left;
             display: flex;
@@ -176,19 +189,20 @@
             font-weight: 600;
         }
 
+        /* NUEVO ESTILO: Tag de consulta UNIFICADO con borde dorado */
         .btn-action-tag {
             font-size: 12px;
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.07);
+            color: #d4af37; /* Letras doradas */
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro translúcido */
             padding: 6px 12px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #d4af37; /* Borde dorado en todos */
             white-space: nowrap;
         }
 
-        /* NUEVOS ESTILOS PARA EL PIE DE PÁGINA (FOOTER) */
+        /* Pie de página (Footer) */
         .footer-separator {
             border: 0;
             height: 1px;
@@ -234,6 +248,8 @@
             <div class="catalog-sub-title">Consultar Disponibilidad</div>
         </div>
         
+        <div class="category-subtitle">Diseñador</div>
+
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume perfume-jpg">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
@@ -241,6 +257,9 @@
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
+
+
+        <div class="category-subtitle">Árabe</div>
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
             <div class="perfume-info">
@@ -257,6 +276,7 @@
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
+
 
         <hr class="footer-separator">
         <div class="footer-text">
