@@ -55,8 +55,25 @@
         .bio {
             font-size: 14px;
             color: #aaaaaa;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.4;
+        }
+
+        /* Estilo elegante para el Texto en Movimiento */
+        .marquee-container {
+            background-color: #111111;
+            border-top: 1px solid #222222;
+            border-bottom: 1px solid #222222;
+            padding: 8px 0;
+            margin-bottom: 15px;
+        }
+
+        .marquee-text {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         /* Títulos de sección Estilizados */
@@ -65,13 +82,13 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             color: #d4af37;
-            margin: 30px 0 14px 0;
+            margin: 25px 0 14px 0;
             text-align: left;
             padding-left: 5px;
             font-weight: 600;
         }
 
-        /* Botones Principales en Dorado Premium */
+        /* Botones Principales en Dorado Premium con Centrado Perfecto */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -86,7 +103,7 @@
             box-shadow: 0px 4px 18px rgba(212, 175, 55, 0.2);
             transition: all 0.25s ease;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Centrado horizontal perfecto */
             align-items: center;
             gap: 8px;
         }
@@ -120,7 +137,7 @@
             gap: 14px;
         }
 
-        /* Miniatura de perfume optimizada con tus links */
+        /* Miniatura de perfume */
         .perfume-thumb {
             width: 48px;
             height: 48px;
@@ -159,9 +176,19 @@
         <h1>FIXPARFUM</h1>
         <p class="bio">Perfumes 100% originales en formato decant.<br>Envíos garantizados a todo Chile. ✨</p>
 
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left" scrollamount="3" class="marquee-text">
+                ✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM CHILE ✨
+            </marquee>
+        </div>
+
         <div class="section-title">Canales Oficiales</div>
-        <a href="https://www.instagram.com/fixparfum.cl?igsh=MTNnbmRyMjMweW1jNQ==" target="_blank" class="btn-gold">📸 Síguenos en Instagram</a>
-        <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20una%20consulta%20general." target="_blank" class="btn-gold">💬 WhatsApp Directo</a>
+        <a href="https://www.instagram.com/fixparfum.cl?igsh=MTNnbmRyMjMweW1jNQ==" target="_blank" class="btn-gold">
+            📸 Síguenos en Instagram
+        </a>
+        <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20una%20consulta%20general." target="_blank" class="btn-gold">
+            💬 WhatsApp Directo
+        </a>
 
         <div class="section-title">Catálogo / Consultar Disponibilidad</div>
         
