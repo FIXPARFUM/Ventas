@@ -43,12 +43,12 @@
             display: block;
         }
 
-        /* Título Principal ahora en Dorado Elegante */
+        /* Título Principal Dorado */
         h1 {
             font-size: 24px;
             letter-spacing: 4px;
             margin-bottom: 8px;
-            color: #d4af37; /* Cambio a Dorado */
+            color: #d4af37;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -60,7 +60,7 @@
             line-height: 1.4;
         }
 
-        /* Estilo elegante para el Texto en Movimiento */
+        /* Texto en movimiento elegante */
         .marquee-container {
             background-color: #111111;
             border-top: 1px solid #222222;
@@ -77,7 +77,7 @@
             text-transform: uppercase;
         }
 
-        /* Títulos de sección Estilizados */
+        /* Títulos de sección */
         .section-title {
             font-size: 11px;
             text-transform: uppercase;
@@ -89,7 +89,7 @@
             font-weight: 600;
         }
 
-        /* Título de Catálogo Mejorado en Dos Líneas para Evitar Cortes */
+        /* Título de Catálogo Estructurado */
         .catalog-title-container {
             margin: 30px 0 16px 0;
             text-align: left;
@@ -109,11 +109,11 @@
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: #888888; /* Un gris más tenue para jerarquía visual */
+            color: #888888;
             font-weight: 500;
         }
 
-        /* Botones Principales en Dorado Premium */
+        /* Botones Dorados Principales */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -138,16 +138,12 @@
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes */
+        /* Estilo base para las Tarjetas de Perfumes */
         .btn-perfume {
             display: block;
-            background-color: #161616;
-            color: #ffffff;
             text-decoration: none;
             margin-bottom: 14px;
             border-radius: 12px;
-            border: 1px solid #252525;
-            border-left: 4px solid #d4af37;
             text-align: left;
             display: flex;
             align-items: center;
@@ -156,20 +152,42 @@
             transition: all 0.25s ease;
         }
 
+        /* NUEVOS COLORES PERSONALIZADOS SEGÚN EL PERFUME */
+        
+        /* 1. JPG Le Male Elixir: Negro azulado náutico y oro */
+        .perfume-jpg {
+            background-color: #0c121a;
+            border: 1px solid #1a2636;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* 2. Lattafa Asad: Café oscuro/Bronce místico */
+        .perfume-asad {
+            background-color: #17120e;
+            border: 1px solid #292019;
+            border-left: 4px solid #c59b6d;
+        }
+
+        /* 3. Lattafa Amethyst: Púrpura real/Uva profundo */
+        .perfume-amethyst {
+            background-color: #150f1c;
+            border: 1px solid #281d36;
+            border-left: 4px solid #a370dc;
+        }
+
         .perfume-info {
             display: flex;
             align-items: center;
             gap: 14px;
         }
 
-        /* Miniatura de perfume */
+        /* Miniatura de perfume con fondo transparente/adaptable */
         .perfume-thumb {
             width: 48px;
             height: 48px;
             border-radius: 8px;
             object-fit: cover;
-            background-color: #1a1a1a;
-            border: 1px solid #2d2d2d;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .perfume-name {
@@ -178,16 +196,16 @@
             font-weight: 600;
         }
 
-        /* Tag de consulta */
+        /* Tag de consulta que se adapta al fondo oscuro */
         .btn-action-tag {
             font-size: 12px;
-            color: #d4af37;
-            background-color: #222222;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.07);
             padding: 6px 12px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 0.5px;
-            border: 1px solid #3a3a3a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             white-space: nowrap;
         }
     </style>
@@ -220,7 +238,7 @@
             <div class="catalog-sub-title">Consultar Disponibilidad</div>
         </div>
         
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume">
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume perfume-jpg">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
                 <span class="perfume-name">JPG Le Male Elixir</span>
@@ -228,7 +246,7 @@
             <span class="btn-action-tag">Consultar</span>
         </a>
 
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume">
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Asad</span>
@@ -236,7 +254,7 @@
             <span class="btn-action-tag">Consultar</span>
         </a>
 
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume">
+        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume perfume-amethyst">
             <div class="perfume-info">
                 <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
                 <span class="perfume-name">Lattafa Amethyst</span>
