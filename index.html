@@ -121,7 +121,7 @@
             color: #d4af37;
             text-align: left;
             padding-left: 8px;
-            margin: 18px 0 10px 0;
+            margin: 22px 0 12px 0;
             font-weight: 600;
             border-left: 2px solid #d4af37;
         }
@@ -151,7 +151,7 @@
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes con fondos adaptados */
+        /* Tarjetas de Perfumes */
         .btn-perfume {
             display: block;
             text-decoration: none;
@@ -165,9 +165,22 @@
             transition: all 0.25s ease;
         }
 
+        /* COLORES PERSONALIZADOS PARA EL CATÁLOGO */
         .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; }
+        .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; }
+        .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; }
+        .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; }
+        
         .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; }
         .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; }
+        .perfume-khamrah { background-color: #1a130c; border: 1px solid #332617; border-left: 4px solid #d99138; }
+
+        /* Clase especial para productos AGOTADOS */
+        .sold-out {
+            opacity: 0.45; /* Lo vuelve más opaco y sutil */
+            cursor: not-allowed;
+            pointer-events: none; /* Evita que hagan clic */
+        }
 
         .perfume-info {
             display: flex;
@@ -189,34 +202,30 @@
             font-weight: 600;
         }
 
-        /* NUEVO ESTILO: Tag de consulta UNIFICADO con borde dorado */
+        /* Tag de consulta DISPONIBLE */
         .btn-action-tag {
             font-size: 12px;
-            color: #d4af37; /* Letras doradas */
-            background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro translúcido */
+            color: #d4af37;
+            background-color: rgba(0, 0, 0, 0.4);
             padding: 6px 12px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 0.5px;
-            border: 1px solid #d4af37; /* Borde dorado en todos */
+            border: 1px solid #d4af37;
             white-space: nowrap;
         }
 
-        /* Pie de página (Footer) */
-        .footer-separator {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
-            margin: 40px auto 20px auto;
-            width: 80%;
-        }
-
-        .footer-text {
+        /* Tag especial para AGOTADO */
+        .btn-sold-out-tag {
             font-size: 11px;
-            color: #666666;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            padding: 0 15px 20px 15px;
+            color: #888888;
+            background-color: #222222;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border: 1px solid #444444;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -258,33 +267,7 @@
             <span class="btn-action-tag">Consultar</span>
         </a>
 
-
-        <div class="category-subtitle">Árabe</div>
-
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
+        <div class="btn btn-perfume perfume-theone sold-out">
             <div class="perfume-info">
-                <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
-                <span class="perfume-name">Lattafa Asad</span>
-            </div>
-            <span class="btn-action-tag">Consultar</span>
-        </a>
-
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume perfume-amethyst">
-            <div class="perfume-info">
-                <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
-                <span class="perfume-name">Lattafa Amethyst</span>
-            </div>
-            <span class="btn-action-tag">Consultar</span>
-        </a>
-
-
-        <hr class="footer-separator">
-        <div class="footer-text">
-            Decants 100% auténticos extraídos con precisión e higiene.<br>
-            © 2026 FIXPARFUM • Diseñado con elegancia.
-        </div>
-
-    </div>
-
-</body>
-</html>
+                <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
+                <span class="perfume-name">D
