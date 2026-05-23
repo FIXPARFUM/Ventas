@@ -60,7 +60,7 @@
             line-height: 1.4;
         }
 
-        /* Texto en movimiento elegante */
+        /* Texto en movimiento */
         .marquee-container {
             background-color: #111111;
             border-top: 1px solid #222222;
@@ -89,7 +89,7 @@
             font-weight: 600;
         }
 
-        /* Título de Catálogo Estructurado */
+        /* Título de Catálogo */
         .catalog-title-container {
             margin: 30px 0 16px 0;
             text-align: left;
@@ -138,7 +138,7 @@
             opacity: 0.95;
         }
 
-        /* Estilo base para las Tarjetas de Perfumes */
+        /* Tarjetas de Perfumes con fondos adaptados */
         .btn-perfume {
             display: block;
             text-decoration: none;
@@ -152,28 +152,9 @@
             transition: all 0.25s ease;
         }
 
-        /* NUEVOS COLORES PERSONALIZADOS SEGÚN EL PERFUME */
-        
-        /* 1. JPG Le Male Elixir: Negro azulado náutico y oro */
-        .perfume-jpg {
-            background-color: #0c121a;
-            border: 1px solid #1a2636;
-            border-left: 4px solid #d4af37;
-        }
-
-        /* 2. Lattafa Asad: Café oscuro/Bronce místico */
-        .perfume-asad {
-            background-color: #17120e;
-            border: 1px solid #292019;
-            border-left: 4px solid #c59b6d;
-        }
-
-        /* 3. Lattafa Amethyst: Púrpura real/Uva profundo */
-        .perfume-amethyst {
-            background-color: #150f1c;
-            border: 1px solid #281d36;
-            border-left: 4px solid #a370dc;
-        }
+        .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; }
+        .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; }
+        .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; }
 
         .perfume-info {
             display: flex;
@@ -181,7 +162,6 @@
             gap: 14px;
         }
 
-        /* Miniatura de perfume con fondo transparente/adaptable */
         .perfume-thumb {
             width: 48px;
             height: 48px;
@@ -196,7 +176,6 @@
             font-weight: 600;
         }
 
-        /* Tag de consulta que se adapta al fondo oscuro */
         .btn-action-tag {
             font-size: 12px;
             color: #ffffff;
@@ -207,6 +186,23 @@
             letter-spacing: 0.5px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             white-space: nowrap;
+        }
+
+        /* NUEVOS ESTILOS PARA EL PIE DE PÁGINA (FOOTER) */
+        .footer-separator {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            margin: 40px auto 20px auto;
+            width: 80%;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            padding: 0 15px 20px 15px;
         }
     </style>
 </head>
@@ -261,6 +257,12 @@
             </div>
             <span class="btn-action-tag">Consultar</span>
         </a>
+
+        <hr class="footer-separator">
+        <div class="footer-text">
+            Decants 100% auténticos extraídos con precisión e higiene.<br>
+            © 2026 FIXPARFUM • Diseñado con elegancia.
+        </div>
 
     </div>
 
