@@ -4,60 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIXPARFUM - Enlaces Oficiales</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* Estilos base con estética Luxury Dark */
+        /* Estilos base actualizados con Manrope */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #0d0d0d;
+            background: 
+                radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%),
+                linear-gradient(to bottom, #0d0d0d, #090909);
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .container {
             width: 100%;
             max-width: 450px;
             text-align: center;
-            padding: 10px;
+            padding: 18px;
+            backdrop-filter: blur(6px);
         }
 
-        /* Logo Oficial */
+        /* Logo con transición Premium */
         .logo-img {
             width: 115px;
             height: 115px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 18px auto;
+            margin: 0 auto 22px auto;
             border: 2px solid #d4af37;
-            box-shadow: 0px 6px 25px rgba(212, 175, 55, 0.35);
+            box-shadow:
+                0px 6px 25px rgba(212, 175, 55, 0.35),
+                0px 0px 40px rgba(212,175,55,0.08);
             background-color: #1a1a1a;
             display: block;
+            transition: transform 0.3s ease;
         }
 
-        /* Título Principal Dorado */
+        .logo-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Título Principal más imponente */
         h1 {
-            font-size: 24px;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
+            font-size: 28px;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
             color: #d4af37;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
         }
 
         .bio {
             font-size: 14px;
-            color: #aaaaaa;
-            margin-bottom: 25px;
-            line-height: 1.4;
+            color: #9d9d9d;
+            margin-bottom: 28px;
+            line-height: 1.6;
         }
 
         /* Texto en movimiento */
@@ -126,7 +146,7 @@
             border-left: 3px solid #d4af37;
         }
 
-        /* Botones Dorados Principales */
+        /* Botones Dorados Principales con Animaciones Activas */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -139,11 +159,16 @@
             font-weight: 700;
             border: none;
             box-shadow: 0px 4px 18px rgba(212, 175, 55, 0.2);
-            transition: all 0.25s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 28px rgba(212, 175, 55, 0.18);
         }
 
         .btn-gold:active, .btn-perfume:active {
@@ -151,15 +176,22 @@
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes */
+        /* Tarjetas de Perfumes Mejoradas (Efecto Glass + Bordes Redondeados) */
         .btn-perfume {
             display: table;
             width: 100%;
             text-decoration: none;
             margin-bottom: 12px;
-            border-radius: 12px;
-            padding: 12px 16px;
-            transition: all 0.25s ease;
+            border-radius: 16px;
+            padding: 14px 18px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+        }
+
+        .btn-perfume:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 28px rgba(212, 175, 55, 0.18);
+            border-color: rgba(212, 175, 55, 0.45) !important;
         }
 
         .perfume-row {
@@ -187,20 +219,20 @@
             padding-right: 10px;
         }
 
-        /* COLORES PERSONALIZADOS PARA EL CATÁLOGO */
-        .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; }
-        .perfume-azzaro { background-color: #120e0a; border: 1px solid #241c14; border-left: 4px solid #e5a93b; }
-        .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; }
-        .perfume-gucci { background-color: #141414; border: 1px solid #242424; border-left: 4px solid #9c9c9c; }
-        .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; }
-        .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; }
+        /* COLORES Y SOMBRAS INTERNAS PREMIUM (Efecto Vidrio Oscuro) */
+        .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-azzaro { background-color: #120e0a; border: 1px solid #241c14; border-left: 4px solid #e5a93b; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-gucci { background-color: #141414; border: 1px solid #242424; border-left: 4px solid #9c9c9c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
         
-        .perfume-khamrah { background-color: #1a130c; border: 1px solid #332617; border-left: 4px solid #d99138; }
-        .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; }
-        .perfume-cdnim { background-color: #111111; border: 1px solid #222222; border-left: 4px solid #cccccc; }
-        .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; }
+        .perfume-khamrah { background-color: #1a130c; border: 1px solid #332617; border-left: 4px solid #d99138; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-cdnim { background-color: #111111; border: 1px solid #222222; border-left: 4px solid #cccccc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
 
-        /* Clase especial para productos AGOTADOS */
+        /* Clase para productos AGOTADOS */
         .sold-out {
             opacity: 0.45;
             cursor: not-allowed;
@@ -216,7 +248,6 @@
             flex-shrink: 0;
         }
 
-        /* Contenedor de textos del perfume */
         .perfume-text-details {
             display: flex;
             flex-direction: column;
@@ -229,14 +260,12 @@
             font-weight: 600;
         }
 
-        /* Lista de precios sutil debajo del nombre */
         .perfume-prices {
             font-size: 11px;
             color: #aaaaaa;
             letter-spacing: 0.5px;
         }
 
-        /* Alerta de reposición sutil */
         .restock-alert {
             font-size: 10px;
             color: #d4af37;
@@ -244,19 +273,23 @@
             letter-spacing: 0.5px;
         }
 
-        /* Tag de consulta DISPONIBLE */
+        /* Tags más Modernos */
         .btn-action-tag {
-            font-size: 12px;
+            font-size: 11px;
             color: #d4af37;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            border: 1px solid #d4af37;
+            background: rgba(212, 175, 55, 0.08);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            transition: all 0.25s ease;
         }
 
-        /* Tag especial para AGOTADO */
+        .btn-action-tag:hover {
+            background: rgba(212, 175, 55, 0.14);
+        }
+
         .btn-sold-out-tag {
             font-size: 11px;
             color: #888888;
@@ -268,7 +301,7 @@
             border: 1px solid #444444;
         }
 
-        /* Sutil Línea Separadora entre Categorías */
+        /* Separador de Categoría */
         .section-separator {
             border: 0;
             height: 1px;
@@ -277,7 +310,7 @@
             width: 90%;
         }
 
-        /* Pie de página (Footer) */
+        /* Footer Premium */
         .footer-separator {
             border: 0;
             height: 1px;
@@ -289,13 +322,44 @@
         .footer-text {
             font-size: 11px;
             color: #666666;
-            line-height: 1.6;
-            letter-spacing: 1px;
+            line-height: 1.8;
+            letter-spacing: 1.2px;
             padding: 0 15px 20px 15px;
+        }
+
+        /* Botón WhatsApp Flotante */
+        .whatsapp-float {
+            position: fixed;
+            width: 58px;
+            height: 58px;
+            bottom: 22px;
+            right: 22px;
+            background: linear-gradient(135deg, #25d366, #1ebe5d);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0px 8px 24px rgba(37,211,102,0.35);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20un%20pedido." class="whatsapp-float" target="_blank">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.296 1.489 4.974 1.49 5.464 0 9.91-4.444 9.913-9.91.002-2.648-1.02-5.136-2.877-6.995C16.743 1.89 14.26 1.867 11.61 1.867c-5.467 0-9.915 4.444-9.919 9.91-.001 1.772.482 3.434 1.396 4.907L2.052 20.2l3.743-.982c.264.143.524.275.852.436z"/>
+        </svg>
+    </a>
 
     <div class="container">
         
@@ -504,7 +568,6 @@
                 </div>
             </div>
         </a>
-
 
         <hr class="footer-separator">
         <div class="footer-text">
