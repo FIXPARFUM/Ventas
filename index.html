@@ -22,9 +22,11 @@
             scroll-behavior: smooth;
         }
 
+        /* Body con gradiente de lujo y textura de grano (Grain) casi invisible */
         body {
             background: 
                 radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E"),
                 linear-gradient(to bottom, #0d0d0d, #090909);
             color: #ffffff;
             display: flex;
@@ -43,7 +45,7 @@
             backdrop-filter: blur(6px);
         }
 
-        /* Logo con transición Premium */
+        /* Logo con transición Premium y leve rotación */
         .logo-img {
             width: 115px;
             height: 115px;
@@ -60,7 +62,7 @@
         }
 
         .logo-img:hover {
-            transform: scale(1.03);
+            transform: scale(1.03) rotate(1deg);
         }
 
         /* Título Principal más imponente */
@@ -80,13 +82,15 @@
             line-height: 1.6;
         }
 
-        /* Texto en movimiento */
+        /* Reemplazo moderno de <marquee> con CSS Nativo Puro */
         .marquee-container {
             background-color: #111111;
             border-top: 1px solid #222222;
             border-bottom: 1px solid #222222;
             padding: 8px 0;
             margin-bottom: 15px;
+            overflow: hidden;
+            width: 100%;
         }
 
         .marquee-text {
@@ -95,6 +99,14 @@
             letter-spacing: 3px;
             font-weight: 600;
             text-transform: uppercase;
+            animation: marqueeMove 18s linear infinite;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        @keyframes marqueeMove {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
         }
 
         /* Títulos de sección de Canales */
@@ -133,7 +145,7 @@
             font-weight: 500;
         }
 
-        /* Títulos de Subcategorías */
+        /* Títulos de Subcategorías con mayor separación superior */
         .category-subtitle {
             font-size: 13px;
             text-transform: uppercase;
@@ -141,7 +153,7 @@
             color: #d4af37;
             text-align: left;
             padding-left: 10px;
-            margin: 28px 0 14px 0;
+            margin: 38px 0 14px 0;
             font-weight: 700;
             border-left: 3px solid #d4af37;
         }
@@ -176,7 +188,7 @@
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes Mejoradas */
+        /* Tarjetas de Perfumes con Animación de entrada de lujo (fadeUp) */
         .btn-perfume {
             display: table;
             width: 100%;
@@ -185,8 +197,26 @@
             border-radius: 16px;
             padding: 14px 16px;
             backdrop-filter: blur(10px);
+            animation: fadeUp 0.5s ease backwards;
             transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
         }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Escalona la entrada de los perfumes de forma elegante */
+        .btn-perfume:nth-child(1) { animation-delay: 0.05s; }
+        .btn-perfume:nth-child(2) { animation-delay: 0.1s; }
+        .btn-perfume:nth-child(3) { animation-delay: 0.15s; }
+        .btn-perfume:nth-child(4) { animation-delay: 0.2s; }
 
         .btn-perfume:hover {
             transform: translateY(-3px);
@@ -263,6 +293,16 @@
             font-weight: 700;
         }
 
+        /* Nueva Descripción Olfativa Estilizada */
+        .perfume-desc {
+            font-size: 11px;
+            color: #777777;
+            letter-spacing: 0.6px;
+            font-weight: 500;
+            margin-top: -2px;
+            margin-bottom: 2px;
+        }
+
         /* Lista de precios estructurada verticalmente */
         .prices-list {
             display: flex;
@@ -270,10 +310,11 @@
             gap: 3px;
         }
 
-        /* Texto de precios con mejor tamaño */
+        /* Texto de precios con más peso visual y mejor contraste */
         .price-item {
             font-size: 13px;
-            color: #aaaaaa;
+            color: #b5b5b5;
+            font-weight: 500;
             letter-spacing: 0.3px;
         }
 
@@ -289,7 +330,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             margin-top: 2px;
-            white-space: nowrap; /* Fuerza a mantenerse en una sola línea */
+            white-space: nowrap;
             display: block;
         }
 
@@ -386,12 +427,12 @@
         <img src="https://i.ibb.co/tTTyTBzB/file-00000000834071f5b7fff06eb67ee5e1.png" alt="FIXPARFUM Logo" class="logo-img">
         
         <h1>FIXPARFUM</h1>
-        <p class="bio">Perfumes 100% originales en formato decant.<br>Envíos garantizados a todo Chile. ✨</p>
+        <p class="bio">Perfumes 100% originales en formato Decant.<br>Envíos a todo Chile • Atención personalizada ✨</p>
 
         <div class="marquee-container">
-            <marquee behavior="scroll" direction="left" scrollamount="3" class="marquee-text">
+            <span class="marquee-text">
                 ✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM ✨
-            </marquee>
+            </span>
         </div>
 
         <div class="section-title">Canales Oficiales</div>
@@ -416,6 +457,7 @@
                         <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">JPG Le Male Elixir</span>
+                            <span class="perfume-desc">Miel • Vainilla • Seductor</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$7.200</strong></span>
                                 <span class="price-item">5ml: <strong>$11.500</strong></span>
@@ -437,6 +479,7 @@
                         <img src="https://i.ibb.co/DDg9tZLT/file-000000009d4c720e9b82c4d079181159.png" alt="Azzaro The Most Wanted Parfum" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Azzaro The Most Wanted</span>
+                            <span class="perfume-desc">Ambar • Dulce • Adictivo</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$5.500</strong></span>
                                 <span class="price-item">5ml: <strong>$9.200</strong></span>
@@ -458,6 +501,7 @@
                         <img src="https://i.ibb.co/9mpzHBXz/file-000000008ba871f58325eebb8d2ee404.png" alt="Dior Sauvage EDT" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Dior Sauvage EDT</span>
+                            <span class="perfume-desc">Limpio • Masculino • Moderno</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$6.500</strong></span>
                                 <span class="price-item">5ml: <strong>$10.800</strong></span>
@@ -480,6 +524,7 @@
                         <img src="https://i.ibb.co/67zkp0RY/file-000000009670720e8f906282937f6b58.png" alt="Gucci Guilty" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Gucci Guilty EDT</span>
+                            <span class="perfume-desc">Aromático • Seductor • Urbano</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$5.400</strong></span>
                                 <span class="price-item">5ml: <strong>$8.700</strong></span>
@@ -502,6 +547,7 @@
                         <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">D&G The One EDP</span>
+                            <span class="perfume-desc">Tabaco • Ámbar • Cálido</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$4.500</strong></span>
                                 <span class="price-item">5ml: <strong>$7.500</strong></span>
@@ -524,6 +570,7 @@
                         <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">D&G K EDP</span>
+                            <span class="perfume-desc">Fresco • Especiado • Masculino</span>
                             <div class="prices-list">
                                 <span class="price-item">3ml: <strong>$4.300</strong></span>
                                 <span class="price-item">5ml: <strong>$6.900</strong></span>
@@ -550,6 +597,7 @@
                         <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Khamrah</span>
+                            <span class="perfume-desc">Gourmand • Dulce • Envolvente</span>
                             <div class="prices-list">
                                 <span class="price-item">5ml: <strong>$6.000</strong></span>
                                 <span class="price-item">10ml: <strong>$10.200</strong></span>
@@ -571,6 +619,7 @@
                         <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Amethyst</span>
+                            <span class="perfume-desc">Rosas • Oud • Misterioso</span>
                             <div class="prices-list">
                                 <span class="price-item">5ml: <strong>$4.500</strong></span>
                                 <span class="price-item">10ml: <strong>$7.500</strong></span>
@@ -591,6 +640,7 @@
                         <img src="https://i.ibb.co/xKgtzHGL/file-00000000ea20720eb577ffd163731fc5.png" alt="Club De Nuit Intense Man" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Armaf CDNIM</span>
+                            <span class="perfume-desc">Cítrico • Potente • Masculino</span>
                             <div class="prices-list">
                                 <span class="price-item">5ml: <strong>$4.500</strong></span>
                                 <span class="price-item">10ml: <strong>$7.500</strong></span>
@@ -612,6 +662,7 @@
                         <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Asad</span>
+                            <span class="perfume-desc">Especias • Intenso • Seductor</span>
                             <div class="prices-list">
                                 <span class="price-item">5ml: <strong>$4.200</strong></span>
                                 <span class="price-item">10ml: <strong>$7.000</strong></span>
