@@ -146,7 +146,7 @@
             border-left: 3px solid #d4af37;
         }
 
-        /* Botones Dorados Principales con Animaciones Activas */
+        /* Botones Dorados Principales */
         .btn-gold {
             display: block;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
@@ -176,14 +176,14 @@
             opacity: 0.95;
         }
 
-        /* Tarjetas de Perfumes Mejoradas (Efecto Glass + Bordes Redondeados) */
+        /* Tarjetas de Perfumes Mejoradas */
         .btn-perfume {
             display: table;
             width: 100%;
             text-decoration: none;
             margin-bottom: 12px;
             border-radius: 16px;
-            padding: 14px 18px;
+            padding: 14px 16px;
             backdrop-filter: blur(10px);
             transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
         }
@@ -216,7 +216,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            padding-right: 10px;
+            padding-right: 5px;
         }
 
         /* COLORES Y SOMBRAS INTERNAS PREMIUM (Efecto Vidrio Oscuro) */
@@ -253,25 +253,26 @@
             display: flex;
             flex-direction: column;
             text-align: left;
-            gap: 4px;
+            gap: 5px;
         }
 
+        /* Nombre más grande y presente */
         .perfume-name {
-            font-size: 15px;
+            font-size: 16px;
             color: #ffffff;
             font-weight: 700;
-            margin-bottom: 2px;
         }
 
         /* Lista de precios estructurada verticalmente */
         .prices-list {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 3px;
         }
 
+        /* Texto de precios con mejor tamaño */
         .price-item {
-            font-size: 12px;
+            font-size: 13px;
             color: #aaaaaa;
             letter-spacing: 0.3px;
         }
@@ -281,12 +282,15 @@
             font-weight: 600;
         }
 
+        /* Alerta de reposición forzada en una sola línea */
         .restock-alert {
             font-size: 11px;
             color: #d4af37;
-            font-weight: bold;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            margin-top: 3px;
+            margin-top: 2px;
+            white-space: nowrap; /* Fuerza a mantenerse en una sola línea */
+            display: block;
         }
 
         /* Tags más Modernos */
