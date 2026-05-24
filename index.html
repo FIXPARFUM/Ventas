@@ -240,37 +240,53 @@
         }
 
         .perfume-thumb {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 8px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.05);
             flex-shrink: 0;
         }
 
+        /* Contenedor de información corregido para orden vertical */
         .perfume-text-details {
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            text-align: left;
+            gap: 4px;
         }
 
         .perfume-name {
-            font-size: 14px;
+            font-size: 15px;
             color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        /* Lista de precios estructurada verticalmente */
+        .prices-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .price-item {
+            font-size: 12px;
+            color: #aaaaaa;
+            letter-spacing: 0.3px;
+        }
+
+        .price-item strong {
+            color: #e5a93b;
             font-weight: 600;
         }
 
-        .perfume-prices {
-            font-size: 11px;
-            color: #aaaaaa;
-            letter-spacing: 0.5px;
-        }
-
         .restock-alert {
-            font-size: 10px;
+            font-size: 11px;
             color: #d4af37;
             font-weight: bold;
             letter-spacing: 0.5px;
+            margin-top: 3px;
         }
 
         /* Tags más Modernos */
@@ -396,7 +412,11 @@
                         <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">JPG Le Male Elixir</span>
-                            <span class="perfume-prices">3ml: $7.200 | 5ml: $11.500 | 10ml: $20.500</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$7.200</strong></span>
+                                <span class="price-item">5ml: <strong>$11.500</strong></span>
+                                <span class="price-item">10ml: <strong>$20.500</strong></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -413,7 +433,11 @@
                         <img src="https://i.ibb.co/DDg9tZLT/file-000000009d4c720e9b82c4d079181159.png" alt="Azzaro The Most Wanted Parfum" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Azzaro The Most Wanted</span>
-                            <span class="perfume-prices">3ml: $5.500 | 5ml: $9.200 | 10ml: $16.200</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$5.500</strong></span>
+                                <span class="price-item">5ml: <strong>$9.200</strong></span>
+                                <span class="price-item">10ml: <strong>$16.200</strong></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -430,7 +454,11 @@
                         <img src="https://i.ibb.co/9mpzHBXz/file-000000008ba871f58325eebb8d2ee404.png" alt="Dior Sauvage EDT" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Dior Sauvage EDT</span>
-                            <span class="perfume-prices">3ml: $6.500 | 5ml: $10.800 | 10ml: $19.000</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$6.500</strong></span>
+                                <span class="price-item">5ml: <strong>$10.800</strong></span>
+                                <span class="price-item">10ml: <strong>$19.000</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -448,7 +476,11 @@
                         <img src="https://i.ibb.co/67zkp0RY/file-000000009670720e8f906282937f6b58.png" alt="Gucci Guilty" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Gucci Guilty EDT</span>
-                            <span class="perfume-prices">3ml: $5.400 | 5ml: $8.700 | 10ml: $15.300</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$5.400</strong></span>
+                                <span class="price-item">5ml: <strong>$8.700</strong></span>
+                                <span class="price-item">10ml: <strong>$15.300</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -466,7 +498,11 @@
                         <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">D&G The One EDP</span>
-                            <span class="perfume-prices">3ml: $4.500 | 5ml: $7.500 | 10ml: $12.800</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$4.500</strong></span>
+                                <span class="price-item">5ml: <strong>$7.500</strong></span>
+                                <span class="price-item">10ml: <strong>$12.800</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -484,7 +520,11 @@
                         <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">D&G K EDP</span>
-                            <span class="perfume-prices">3ml: $4.300 | 5ml: $6.900 | 10ml: $11.800</span>
+                            <div class="prices-list">
+                                <span class="price-item">3ml: <strong>$4.300</strong></span>
+                                <span class="price-item">5ml: <strong>$6.900</strong></span>
+                                <span class="price-item">10ml: <strong>$11.800</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -506,7 +546,10 @@
                         <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Khamrah</span>
-                            <span class="perfume-prices">5ml: $6.000 | 10ml: $10.200</span>
+                            <div class="prices-list">
+                                <span class="price-item">5ml: <strong>$6.000</strong></span>
+                                <span class="price-item">10ml: <strong>$10.200</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -524,7 +567,10 @@
                         <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Amethyst</span>
-                            <span class="perfume-prices">5ml: $4.500 | 10ml: $7.500</span>
+                            <div class="prices-list">
+                                <span class="price-item">5ml: <strong>$4.500</strong></span>
+                                <span class="price-item">10ml: <strong>$7.500</strong></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -541,7 +587,10 @@
                         <img src="https://i.ibb.co/xKgtzHGL/file-00000000ea20720eb577ffd163731fc5.png" alt="Club De Nuit Intense Man" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Armaf CDNIM</span>
-                            <span class="perfume-prices">5ml: $4.500 | 10ml: $7.500</span>
+                            <div class="prices-list">
+                                <span class="price-item">5ml: <strong>$4.500</strong></span>
+                                <span class="price-item">10ml: <strong>$7.500</strong></span>
+                            </div>
                             <span class="restock-alert">🔒 Próxima reposición</span>
                         </div>
                     </div>
@@ -559,7 +608,10 @@
                         <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
                         <div class="perfume-text-details">
                             <span class="perfume-name">Lattafa Asad</span>
-                            <span class="perfume-prices">5ml: $4.200 | 10ml: $7.000</span>
+                            <div class="prices-list">
+                                <span class="price-item">5ml: <strong>$4.200</strong></span>
+                                <span class="price-item">10ml: <strong>$7.000</strong></span>
+                            </div>
                         </div>
                     </div>
                 </div>
