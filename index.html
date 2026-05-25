@@ -41,7 +41,7 @@
             width: 100%;
             max-width: 450px;
             text-align: center;
-            padding: 18px;
+            padding: 10px;
             backdrop-filter: blur(6px);
         }
 
@@ -188,16 +188,15 @@
             opacity: 0.95;
         }
 
-        /* NUEVA ESTRUCTURA FLEXBOX: Asegura simetría y alineación perfecta */
+        /* NUEVA TARJETA ESTRUCTURADA VERTICALMENTE (Anti-Errores de Pantalla) */
         .btn-perfume {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             width: 100%;
             text-decoration: none;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             border-radius: 16px;
-            padding: 14px 16px;
+            padding: 16px;
             backdrop-filter: blur(10px);
             animation: fadeUp 0.5s ease backwards;
             transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
@@ -214,33 +213,105 @@
             }
         }
 
-        /* Escalona la entrada de los perfumes */
-        .btn-perfume:nth-child(1) { animation-delay: 0.05s; }
-        .btn-perfume:nth-child(2) { animation-delay: 0.1s; }
-        .btn-perfume:nth-child(3) { animation-delay: 0.15s; }
-        .btn-perfume:nth-child(4) { animation-delay: 0.2s; }
-
         .btn-perfume:hover {
             transform: translateY(-3px);
             box-shadow: 0px 10px 28px rgba(212, 175, 55, 0.18);
             border-color: rgba(212, 175, 55, 0.45) !important;
         }
 
-        /* Bloque izquierdo que junta imagen + textos */
-        .perfume-info-block {
+        /* Fila 1: Encabezado con Nombre y Descriptor */
+        .perfume-header-row {
+            text-align: left;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .perfume-name {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .perfume-desc {
+            font-size: 11px;
+            color: #909090;
+            letter-spacing: 0.6px;
+            font-weight: 500;
+            display: block;
+            white-space: nowrap;
+        }
+
+        /* Fila 2: Cuerpo dividido en Dos Columnas perfectas */
+        .perfume-body-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* Columna Izquierda: Miniatura + Precios */
+        .perfume-left-col {
             display: flex;
             align-items: center;
             gap: 14px;
-            text-align: left;
         }
 
-        /* Bloque derecho exclusivo para los Tags de acción */
-        .perfume-action-block {
+        .perfume-thumb {
+            width: 54px;
+            height: 54px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             flex-shrink: 0;
-            margin-left: 10px;
         }
 
-        /* COLORES Y SOMBRAS INTERNES PREMIUM (Efecto Vidrio Oscuro) */
+        .prices-list {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            gap: 3px;
+        }
+
+        .price-item {
+            font-size: 13px;
+            color: #b5b5b5;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .price-item strong {
+            color: #e5a93b;
+            font-weight: 600;
+        }
+
+        /* Columna Derecha: Botón Fijo en el borde */
+        .perfume-right-col {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Fila 3: Alerta de reposición abajo solita */
+        .perfume-footer-row {
+            width: 100%;
+            text-align: left;
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 8px;
+        }
+
+        .restock-alert {
+            font-size: 11px;
+            color: #d4af37;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            display: block;
+        }
+
+        /* COLORES Y SOMBRAS INTERNAS PREMIUM (Efecto Vidrio Oscuro) */
         .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
         .perfume-azzaro { background-color: #120e0a; border: 1px solid #241c14; border-left: 4px solid #e5a93b; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
         .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
@@ -260,89 +331,24 @@
             pointer-events: none;
         }
 
-        .perfume-thumb {
-            width: 52px;
-            height: 52px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            flex-shrink: 0;
-        }
-
-        .perfume-text-details {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            gap: 4px;
-        }
-
-        .perfume-name {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .perfume-desc {
-            font-size: 10.5px;
-            color: #909090;
-            letter-spacing: 0.6px;
-            font-weight: 500;
-            margin-bottom: 2px;
-            white-space: nowrap;
-        }
-
-        .prices-list {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .price-item {
-            font-size: 13px;
-            color: #b5b5b5;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        .price-item strong {
-            color: #e5a93b;
-            font-weight: 600;
-        }
-
-        /* Alerta de reposición alineada abajo perfectamente */
-        .restock-alert {
-            font-size: 11px;
-            color: #d4af37;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-            white-space: nowrap;
-            display: block;
-        }
-
-        /* Tags Modernos */
+        /* Tags Estilizados */
         .btn-action-tag {
             font-size: 11px;
             color: #d4af37;
             background: rgba(212, 175, 55, 0.08);
-            padding: 7px 12px;
+            padding: 8px 14px;
             border-radius: 8px;
             font-weight: 700;
             letter-spacing: 0.8px;
             border: 1px solid rgba(212, 175, 55, 0.4);
-            transition: all 0.25s ease;
-        }
-
-        .btn-action-tag:hover {
-            background: rgba(212, 175, 55, 0.14);
         }
 
         .btn-sold-out-tag {
             font-size: 11px;
             color: #888888;
             background-color: #222222;
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
             font-weight: bold;
             letter-spacing: 0.5px;
             border: 1px solid #444444;
@@ -437,114 +443,134 @@
         <div class="category-subtitle">Diseñador</div>
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume perfume-jpg">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">JPG Le Male Elixir</span>
-                    <span class="perfume-desc">Miel • Vainilla • Seductor</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">JPG Le Male Elixir</span>
+                <span class="perfume-desc">Miel • Vainilla • Seductor</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/BKtbKY7X/file-000000000434720ead593d6cc32f1c5a.png" alt="JPG Le Male Elixir" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$7.200</strong></span>
                         <span class="price-item">5ml: <strong>$11.500</strong></span>
                         <span class="price-item">10ml: <strong>$20.500</strong></span>
                     </div>
                 </div>
-            </div>
-            <div class="perfume-action-block">
-                <span class="btn-action-tag">Consultar</span>
+                <div class="perfume-right-col">
+                    <span class="btn-action-tag">Consultar</span>
+                </div>
             </div>
         </a>
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Azzaro%20The%20Most%20Wanted%20Parfum." target="_blank" class="btn btn-perfume perfume-azzaro">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/DDg9tZLT/file-000000009d4c720e9b82c4d079181159.png" alt="Azzaro The Most Wanted Parfum" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Azzaro The Most Wanted</span>
-                    <span class="perfume-desc">Ambar • Dulce • Adictivo</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Azzaro The Most Wanted</span>
+                <span class="perfume-desc">Ambar • Dulce • Adictivo</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/DDg9tZLT/file-000000009d4c720e9b82c4d079181159.png" alt="Azzaro The Most Wanted Parfum" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$5.500</strong></span>
                         <span class="price-item">5ml: <strong>$9.200</strong></span>
                         <span class="price-item">10ml: <strong>$16.200</strong></span>
                     </div>
                 </div>
-            </div>
-            <div class="perfume-action-block">
-                <span class="btn-action-tag">Consultar</span>
+                <div class="perfume-right-col">
+                    <span class="btn-action-tag">Consultar</span>
+                </div>
             </div>
         </a>
 
         <div class="btn btn-perfume perfume-sauvage sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/9mpzHBXz/file-000000008ba871f58325eebb8d2ee404.png" alt="Dior Sauvage EDT" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Dior Sauvage EDT</span>
-                    <span class="perfume-desc">Limpio • Masculino • Moderno</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Dior Sauvage EDT</span>
+                <span class="perfume-desc">Limpio • Masculino • Moderno</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/9mpzHBXz/file-000000008ba871f58325eebb8d2ee404.png" alt="Dior Sauvage EDT" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$6.500</strong></span>
                         <span class="price-item">5ml: <strong>$10.800</strong></span>
                         <span class="price-item">10ml: <strong>$19.000</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-right-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
         <div class="btn btn-perfume perfume-gucci sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/67zkp0RY/file-000000009670720e8f906282937f6b58.png" alt="Gucci Guilty" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Gucci Guilty EDT</span>
-                    <span class="perfume-desc">Aromático • Seductor • Urbano</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Gucci Guilty EDT</span>
+                <span class="perfume-desc">Aromático • Seductor • Urbano</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/67zkp0RY/file-000000009670720e8f906282937f6b58.png" alt="Gucci Guilty" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$5.400</strong></span>
                         <span class="price-item">5ml: <strong>$8.700</strong></span>
                         <span class="price-item">10ml: <strong>$15.300</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-right-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
         <div class="btn btn-perfume perfume-theone sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">D&G The One EDP</span>
-                    <span class="perfume-desc">Tabaco • Ámbar • Cálido</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">D&G The One EDP</span>
+                <span class="perfume-desc">Tabaco • Ámbar • Cálido</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$4.500</strong></span>
                         <span class="price-item">5ml: <strong>$7.500</strong></span>
                         <span class="price-item">10ml: <strong>$12.800</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-right-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
         <div class="btn btn-perfume perfume-k sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">D&G K EDP</span>
-                    <span class="perfume-desc">Fresco • Especiado • Masculino</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">D&G K EDP</span>
+                <span class="perfume-desc">Fresco • Especiado • Masculino</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">3ml: <strong>$4.300</strong></span>
                         <span class="price-item">5ml: <strong>$6.900</strong></span>
                         <span class="price-item">10ml: <strong>$11.900</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-right-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
@@ -553,72 +579,84 @@
         <div class="category-subtitle">Árabe</div>
 
         <div class="btn btn-perfume perfume-khamrah sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Lattafa Khamrah</span>
-                    <span class="perfume-desc">Gourmand • Dulce • Envolvente</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Lattafa Khamrah</span>
+                <span class="perfume-desc">Gourmand • Dulce • Envolvente</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">5ml: <strong>$6.000</strong></span>
                         <span class="price-item">10ml: <strong>$10.200</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-right-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume perfume-amethyst">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Lattafa Amethyst</span>
-                    <span class="perfume-desc">Rosas • Oud • Misterioso</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Lattafa Amethyst</span>
+                <span class="perfume-desc">Rosas • Oud • Misterioso</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">5ml: <strong>$4.500</strong></span>
                         <span class="price-item">10ml: <strong>$7.500</strong></span>
                     </div>
                 </div>
-            </div>
-            <div class="perfume-action-block">
-                <span class="btn-action-tag">Consultar</span>
+                <div class="perfume-right-col">
+                    <span class="btn-action-tag">Consultar</span>
+                </div>
             </div>
         </a>
 
         <div class="btn btn-perfume perfume-cdnim sold-out">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/xKgtzHGL/file-00000000ea20720eb577ffd163731fc5.png" alt="Club De Nuit Intense Man" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Armaf CDNIM</span>
-                    <span class="perfume-desc">Cítrico • Potente • Masculino</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Armaf CDNIM</span>
+                <span class="perfume-desc">Cítrico • Potente • Masculino</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/xKgtzHGL/file-00000000ea20720eb577ffd163731fc5.png" alt="Club De Nuit Intense Man" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">5ml: <strong>$4.500</strong></span>
                         <span class="price-item">10ml: <strong>$7.500</strong></span>
                     </div>
-                    <span class="restock-alert">🔒 Próxima reposición</span>
+                </div>
+                <div class="perfume-action-col">
+                    <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
-            <div class="perfume-action-block">
-                <span class="btn-sold-out-tag">Agotado</span>
+            <div class="perfume-footer-row">
+                <span class="restock-alert">🔒 Próxima reposición</span>
             </div>
         </div>
 
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
-            <div class="perfume-info-block">
-                <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
-                <div class="perfume-text-details">
-                    <span class="perfume-name">Lattafa Asad</span>
-                    <span class="perfume-desc">Especias • Intenso • Seductor</span>
+            <div class="perfume-header-row">
+                <span class="perfume-name">Lattafa Asad</span>
+                <span class="perfume-desc">Especias • Intenso • Seductor</span>
+            </div>
+            <div class="perfume-body-row">
+                <div class="perfume-left-col">
+                    <img src="https://i.ibb.co/TxCgcxwC/file-0000000011a0720e8d52dcf267d53720.png" alt="Lattafa Asad" class="perfume-thumb">
                     <div class="prices-list">
                         <span class="price-item">5ml: <strong>$4.200</strong></span>
                         <span class="price-item">10ml: <strong>$7.000</strong></span>
                     </div>
                 </div>
-            </div>
-            <div class="perfume-action-block">
-                <span class="btn-action-tag">Consultar</span>
+                <div class="perfume-right-col">
+                    <span class="btn-action-tag">Consultar</span>
+                </div>
             </div>
         </a>
 
