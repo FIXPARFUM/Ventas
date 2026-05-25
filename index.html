@@ -22,7 +22,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Body con gradiente de lujo y textura de grano (Grain) casi invisible */
+        /* Body con gradiente de lujo, grano y ajuste de padding para móviles */
         body {
             background: 
                 radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%),
@@ -33,7 +33,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 14px; /* Ajuste para móviles */
             overflow-x: hidden;
         }
 
@@ -41,7 +41,7 @@
             width: 100%;
             max-width: 450px;
             text-align: center;
-            padding: 10px;
+            padding: 14px; /* Ajuste de padding */
             backdrop-filter: blur(6px);
         }
 
@@ -188,7 +188,7 @@
             opacity: 0.95;
         }
 
-        /* NUEVA TARJETA ESTRUCTURADA VERTICALMENTE (Anti-Errores de Pantalla) */
+        /* TARJETA ESTRUCTURADA VERTICALMENTE (Anti-Errores de Pantalla) */
         .btn-perfume {
             display: flex;
             flex-direction: column;
@@ -226,6 +226,14 @@
             width: 100%;
         }
 
+        /* Control de desborde de textos (Ellipsis) */
+        .perfume-name,
+        .perfume-desc,
+        .price-item {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         .perfume-name {
             font-size: 16px;
             color: #ffffff;
@@ -235,7 +243,7 @@
         }
 
         .perfume-desc {
-            font-size: 11px;
+            font-size: 10.5px;
             color: #909090;
             letter-spacing: 0.6px;
             font-weight: 500;
@@ -243,19 +251,22 @@
             white-space: nowrap;
         }
 
-        /* Fila 2: Cuerpo dividido en Dos Columnas perfectas */
+        /* Fila 2: Ajuste de fila flexible anti-colapso */
         .perfume-body-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px; /* Espacio mínimo asegurado */
             width: 100%;
+            flex-wrap: nowrap; /* Forzar bloque horizontal */
         }
 
-        /* Columna Izquierda: Miniatura + Precios */
+        /* Columna Izquierda: Ajuste de ancho mínimo */
         .perfume-left-col {
             display: flex;
             align-items: center;
             gap: 14px;
+            min-width: 0; /* Permite contracción segura */
         }
 
         .perfume-thumb {
@@ -267,11 +278,13 @@
             flex-shrink: 0;
         }
 
+        /* Lista de precios con ancho mínimo adaptativo */
         .prices-list {
             display: flex;
             flex-direction: column;
             text-align: left;
             gap: 3px;
+            min-width: 0;
         }
 
         .price-item {
@@ -279,6 +292,7 @@
             color: #b5b5b5;
             font-weight: 500;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         .price-item strong {
@@ -632,8 +646,7 @@
                         <span class="price-item">10ml: <strong>$7.500</strong></span>
                     </div>
                 </div>
-                <div class="perfume-action-col">
-                    <span class="btn-sold-out-tag">Agotado</span>
+                <div class="perfume-right-col"> <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
             <div class="perfume-footer-row">
