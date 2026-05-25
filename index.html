@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilos base actualizados con Manrope */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,7 +21,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Body con gradiente de lujo y textura de grano (Grain) casi invisible */
         body {
             background: 
                 radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%),
@@ -33,7 +31,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 14px; /* Ajuste para móviles aplicado */
             overflow-x: hidden;
         }
 
@@ -41,11 +39,10 @@
             width: 100%;
             max-width: 450px;
             text-align: center;
-            padding: 10px;
+            padding: 14px; /* Ajuste de padding aplicado */
             backdrop-filter: blur(6px);
         }
 
-        /* Logo con transición Premium y leve rotación */
         .logo-img {
             width: 115px;
             height: 115px;
@@ -65,7 +62,6 @@
             transform: scale(1.03) rotate(1deg);
         }
 
-        /* Título Principal más imponente */
         h1 {
             font-size: 28px;
             letter-spacing: 6px;
@@ -82,7 +78,6 @@
             line-height: 1.6;
         }
 
-        /* Reemplazo moderno de <marquee> con CSS Nativo Puro */
         .marquee-container {
             background-color: #111111;
             border-top: 1px solid #222222;
@@ -109,7 +104,6 @@
             to { transform: translateX(-100%); }
         }
 
-        /* Títulos de sección de Canales */
         .section-title {
             font-size: 11px;
             text-transform: uppercase;
@@ -121,7 +115,6 @@
             font-weight: 600;
         }
 
-        /* Título de Catálogo General */
         .catalog-title-container {
             margin: 30px 0 10px 0;
             text-align: left;
@@ -145,7 +138,6 @@
             font-weight: 500;
         }
 
-        /* Títulos de Subcategorías con mayor separación superior */
         .category-subtitle {
             font-size: 13px;
             text-transform: uppercase;
@@ -158,9 +150,8 @@
             border-left: 3px solid #d4af37;
         }
 
-        /* Botones Dorados Principales */
         .btn-gold {
-            display: block;
+            display: flex;
             background: linear-gradient(135deg, #f3e7be 0%, #d4af37 50%, #aa841c 100%);
             color: #0d0d0d;
             text-decoration: none;
@@ -172,7 +163,6 @@
             border: none;
             box-shadow: 0px 4px 18px rgba(212, 175, 55, 0.2);
             transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-            display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
@@ -183,12 +173,6 @@
             box-shadow: 0px 10px 28px rgba(212, 175, 55, 0.18);
         }
 
-        .btn-gold:active, .btn-perfume:active {
-            transform: scale(0.97);
-            opacity: 0.95;
-        }
-
-        /* NUEVA TARJETA ESTRUCTURADA VERTICALMENTE (Anti-Errores de Pantalla) */
         .btn-perfume {
             display: flex;
             flex-direction: column;
@@ -203,27 +187,23 @@
         }
 
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .btn-perfume:hover {
-            transform: translateY(-3px);
-            box-shadow: 0px 10px 28px rgba(212, 175, 55, 0.18);
-            border-color: rgba(212, 175, 55, 0.45) !important;
-        }
-
-        /* Fila 1: Encabezado con Nombre y Descriptor */
         .perfume-header-row {
             text-align: left;
             margin-bottom: 12px;
             width: 100%;
+        }
+
+        /* Ajustes de truncado de texto */
+        .perfume-name,
+        .perfume-desc,
+        .price-item {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .perfume-name {
@@ -240,22 +220,24 @@
             letter-spacing: 0.6px;
             font-weight: 500;
             display: block;
-            white-space: nowrap;
         }
 
-        /* Fila 2: Cuerpo dividido en Dos Columnas perfectas */
+        /* Ajuste solicitado para el body row */
         .perfume-body-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
             width: 100%;
+            flex-wrap: nowrap;
         }
 
-        /* Columna Izquierda: Miniatura + Precios */
+        /* Ajuste solicitado para la columna izquierda */
         .perfume-left-col {
             display: flex;
             align-items: center;
             gap: 14px;
+            min-width: 0;
         }
 
         .perfume-thumb {
@@ -267,11 +249,13 @@
             flex-shrink: 0;
         }
 
+        /* Ajuste solicitado para la lista de precios */
         .prices-list {
             display: flex;
             flex-direction: column;
             text-align: left;
             gap: 3px;
+            min-width: 0;
         }
 
         .price-item {
@@ -286,14 +270,12 @@
             font-weight: 600;
         }
 
-        /* Columna Derecha: Botón Fijo en el borde */
         .perfume-right-col {
             flex-shrink: 0;
             display: flex;
             justify-content: flex-end;
         }
 
-        /* Fila 3: Alerta de reposición abajo solita */
         .perfume-footer-row {
             width: 100%;
             text-align: left;
@@ -311,27 +293,24 @@
             display: block;
         }
 
-        /* COLORES Y SOMBRAS INTERNAS PREMIUM (Efecto Vidrio Oscuro) */
-        .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-azzaro { background-color: #120e0a; border: 1px solid #241c14; border-left: 4px solid #e5a93b; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-gucci { background-color: #141414; border: 1px solid #242424; border-left: 4px solid #9c9c9c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        
-        .perfume-khamrah { background-color: #1a130c; border: 1px solid #332617; border-left: 4px solid #d99138; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-cdnim { background-color: #111111; border: 1px solid #222222; border-left: 4px solid #cccccc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
-        .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.18); }
+        /* Estilos de Perfumes */
+        .perfume-jpg { background-color: #0c121a; border: 1px solid #1a2636; border-left: 4px solid #d4af37; }
+        .perfume-azzaro { background-color: #120e0a; border: 1px solid #241c14; border-left: 4px solid #e5a93b; }
+        .perfume-sauvage { background-color: #080f14; border: 1px solid #14222e; border-left: 4px solid #315f85; }
+        .perfume-gucci { background-color: #141414; border: 1px solid #242424; border-left: 4px solid #9c9c9c; }
+        .perfume-theone { background-color: #17110a; border: 1px solid #2b2014; border-left: 4px solid #b8860b; }
+        .perfume-k { background-color: #0a141d; border: 1px solid #15293a; border-left: 4px solid #4182b3; }
+        .perfume-khamrah { background-color: #1a130c; border: 1px solid #332617; border-left: 4px solid #d99138; }
+        .perfume-amethyst { background-color: #150f1c; border: 1px solid #281d36; border-left: 4px solid #a370dc; }
+        .perfume-cdnim { background-color: #111111; border: 1px solid #222222; border-left: 4px solid #cccccc; }
+        .perfume-asad { background-color: #17120e; border: 1px solid #292019; border-left: 4px solid #c59b6d; }
 
-        /* Clase para productos AGOTADOS */
         .sold-out {
             opacity: 0.45;
             cursor: not-allowed;
             pointer-events: none;
         }
 
-        /* Tags Estilizados */
         .btn-action-tag {
             font-size: 11px;
             color: #d4af37;
@@ -354,7 +333,6 @@
             border: 1px solid #444444;
         }
 
-        /* Separador de Categoría */
         .section-separator {
             border: 0;
             height: 1px;
@@ -363,7 +341,6 @@
             width: 90%;
         }
 
-        /* Footer Premium */
         .footer-separator {
             border: 0;
             height: 1px;
@@ -380,7 +357,6 @@
             padding: 0 15px 20px 15px;
         }
 
-        /* Botón WhatsApp Flotante */
         .whatsapp-float {
             position: fixed;
             width: 58px;
@@ -442,6 +418,7 @@
         
         <div class="category-subtitle">Diseñador</div>
 
+        <!-- JPG -->
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20JPG%20Le%20Male%20Elixir." target="_blank" class="btn btn-perfume perfume-jpg">
             <div class="perfume-header-row">
                 <span class="perfume-name">JPG Le Male Elixir</span>
@@ -462,6 +439,7 @@
             </div>
         </a>
 
+        <!-- Azzaro -->
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Azzaro%20The%20Most%20Wanted%20Parfum." target="_blank" class="btn btn-perfume perfume-azzaro">
             <div class="perfume-header-row">
                 <span class="perfume-name">Azzaro The Most Wanted</span>
@@ -482,6 +460,7 @@
             </div>
         </a>
 
+        <!-- Dior Sauvage -->
         <div class="btn btn-perfume perfume-sauvage sold-out">
             <div class="perfume-header-row">
                 <span class="perfume-name">Dior Sauvage EDT</span>
@@ -505,120 +484,11 @@
             </div>
         </div>
 
-        <div class="btn btn-perfume perfume-gucci sold-out">
-            <div class="perfume-header-row">
-                <span class="perfume-name">Gucci Guilty EDT</span>
-                <span class="perfume-desc">Aromático • Seductor • Urbano</span>
-            </div>
-            <div class="perfume-body-row">
-                <div class="perfume-left-col">
-                    <img src="https://i.ibb.co/67zkp0RY/file-000000009670720e8f906282937f6b58.png" alt="Gucci Guilty" class="perfume-thumb">
-                    <div class="prices-list">
-                        <span class="price-item">3ml: <strong>$5.400</strong></span>
-                        <span class="price-item">5ml: <strong>$8.700</strong></span>
-                        <span class="price-item">10ml: <strong>$15.300</strong></span>
-                    </div>
-                </div>
-                <div class="perfume-right-col">
-                    <span class="btn-sold-out-tag">Agotado</span>
-                </div>
-            </div>
-            <div class="perfume-footer-row">
-                <span class="restock-alert">🔒 Próxima reposición</span>
-            </div>
-        </div>
-
-        <div class="btn btn-perfume perfume-theone sold-out">
-            <div class="perfume-header-row">
-                <span class="perfume-name">D&G The One EDP</span>
-                <span class="perfume-desc">Tabaco • Ámbar • Cálido</span>
-            </div>
-            <div class="perfume-body-row">
-                <div class="perfume-left-col">
-                    <img src="https://i.ibb.co/m5FDvYwc/file-000000002cdc720e8e759939beeff708.png" alt="Dolce&Gabbana The One EDP" class="perfume-thumb">
-                    <div class="prices-list">
-                        <span class="price-item">3ml: <strong>$4.500</strong></span>
-                        <span class="price-item">5ml: <strong>$7.500</strong></span>
-                        <span class="price-item">10ml: <strong>$12.800</strong></span>
-                    </div>
-                </div>
-                <div class="perfume-right-col">
-                    <span class="btn-sold-out-tag">Agotado</span>
-                </div>
-            </div>
-            <div class="perfume-footer-row">
-                <span class="restock-alert">🔒 Próxima reposición</span>
-            </div>
-        </div>
-
-        <div class="btn btn-perfume perfume-k sold-out">
-            <div class="perfume-header-row">
-                <span class="perfume-name">D&G K EDP</span>
-                <span class="perfume-desc">Fresco • Especiado • Masculino</span>
-            </div>
-            <div class="perfume-body-row">
-                <div class="perfume-left-col">
-                    <img src="https://i.ibb.co/qFcc0zQR/file-000000003368720eb9d8e9193c1dc803.png" alt="Dolce&Gabbana K EDP" class="perfume-thumb">
-                    <div class="prices-list">
-                        <span class="price-item">3ml: <strong>$4.300</strong></span>
-                        <span class="price-item">5ml: <strong>$6.900</strong></span>
-                        <span class="price-item">10ml: <strong>$11.900</strong></span>
-                    </div>
-                </div>
-                <div class="perfume-right-col">
-                    <span class="btn-sold-out-tag">Agotado</span>
-                </div>
-            </div>
-            <div class="perfume-footer-row">
-                <span class="restock-alert">🔒 Próxima reposición</span>
-            </div>
-        </div>
-
         <hr class="section-separator">
 
         <div class="category-subtitle">Árabe</div>
 
-        <div class="btn btn-perfume perfume-khamrah sold-out">
-            <div class="perfume-header-row">
-                <span class="perfume-name">Lattafa Khamrah</span>
-                <span class="perfume-desc">Gourmand • Dulce • Envolvente</span>
-            </div>
-            <div class="perfume-body-row">
-                <div class="perfume-left-col">
-                    <img src="https://i.ibb.co/wrdrdT2c/file-000000006de8720eaabcad23819e1676.png" alt="Lattafa Khamrah" class="perfume-thumb">
-                    <div class="prices-list">
-                        <span class="price-item">5ml: <strong>$6.000</strong></span>
-                        <span class="price-item">10ml: <strong>$10.200</strong></span>
-                    </div>
-                </div>
-                <div class="perfume-right-col">
-                    <span class="btn-sold-out-tag">Agotado</span>
-                </div>
-            </div>
-            <div class="perfume-footer-row">
-                <span class="restock-alert">🔒 Próxima reposición</span>
-            </div>
-        </div>
-
-        <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Bade'e%20Al%20Oud%20Amethyst." target="_blank" class="btn btn-perfume perfume-amethyst">
-            <div class="perfume-header-row">
-                <span class="perfume-name">Lattafa Amethyst</span>
-                <span class="perfume-desc">Rosas • Oud • Misterioso</span>
-            </div>
-            <div class="perfume-body-row">
-                <div class="perfume-left-col">
-                    <img src="https://i.ibb.co/Df55KnRp/file-0000000024b871f791318adc2fb8c90b.png" alt="Lattafa Amethyst" class="perfume-thumb">
-                    <div class="prices-list">
-                        <span class="price-item">5ml: <strong>$4.500</strong></span>
-                        <span class="price-item">10ml: <strong>$7.500</strong></span>
-                    </div>
-                </div>
-                <div class="perfume-right-col">
-                    <span class="btn-action-tag">Consultar</span>
-                </div>
-            </div>
-        </a>
-
+        <!-- CDNIM Corregido -->
         <div class="btn btn-perfume perfume-cdnim sold-out">
             <div class="perfume-header-row">
                 <span class="perfume-name">Armaf CDNIM</span>
@@ -632,7 +502,7 @@
                         <span class="price-item">10ml: <strong>$7.500</strong></span>
                     </div>
                 </div>
-                <div class="perfume-action-col">
+                <div class="perfume-right-col"> <!-- Clase corregida aquí -->
                     <span class="btn-sold-out-tag">Agotado</span>
                 </div>
             </div>
@@ -641,6 +511,7 @@
             </div>
         </div>
 
+        <!-- Lattafa Asad -->
         <a href="https://wa.me/56951732661?text=Hola!%20Me%20interesa%20consultar%20por%20el%20decant%20de%20Lattafa%20Asad." target="_blank" class="btn btn-perfume perfume-asad">
             <div class="perfume-header-row">
                 <span class="perfume-name">Lattafa Asad</span>
