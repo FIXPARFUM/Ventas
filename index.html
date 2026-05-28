@@ -82,7 +82,7 @@
             line-height: 1.6;
         }
 
-        /* Reemplazo moderno de <marquee> con CSS Nativo Puro */
+        /* NUEVO MARQUEE INFINITO Y FLUIDO */
         .marquee-container {
             background-color: #111111;
             border-top: 1px solid #222222;
@@ -91,6 +91,14 @@
             margin-bottom: 15px;
             overflow: hidden;
             width: 100%;
+            display: flex;
+        }
+
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            gap: 20px;
+            animation: marqueeMove 20s linear infinite;
         }
 
         .marquee-text {
@@ -99,14 +107,12 @@
             letter-spacing: 3px;
             font-weight: 600;
             text-transform: uppercase;
-            animation: marqueeMove 18s linear infinite;
-            white-space: nowrap;
-            display: inline-block;
+            padding-right: 10px;
         }
 
         @keyframes marqueeMove {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* Títulos de sección de Canales */
@@ -425,7 +431,7 @@
 
     <a href="https://wa.me/56951732661?text=Hola!%20Vengo%20de%20tu%20página%20y%20me%20gustaría%20hacerte%20un%20pedido." class="whatsapp-float" target="_blank">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.296 1.489 4.974 1.49 5.464 0 9.91-4.444 9.913-9.91.002-2.648-1.02-5.136-2.877-6.995C16.743 1.89 14.26 1.867 11.61 1.867c-5.467 0-9.915 4.444-9.919 9.91-.001 1.772.482 3.434 1.396 4.907L2.052 20.2l3.743-.982c.264.143.524.275.852.436z"/>
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.296 1.489 4.974 1.49 midnightblue; 5.464 0 9.91-4.444 9.913-9.91.002-2.648-1.02-5.136-2.877-6.995C16.743 1.89 14.26 1.867 11.61 1.867c-5.467 0-9.915 4.444-9.919 9.91-.001 1.772.482 3.434 1.396 4.907L2.052 20.2l3.743-.982c.264.143.524.275.852.436z"/>
         </svg>
     </a>
 
@@ -437,9 +443,10 @@
         <p class="bio">Perfumes 100% originales en formato Decant.<br>Envíos a todo Chile • Atención personalizada ✨</p>
 
         <div class="marquee-container">
-            <span class="marquee-text">
-                ✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM ✨
-            </span>
+            <div class="marquee-content">
+                <span class="marquee-text">✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM ✨</span>
+                <span class="marquee-text">✨ "No es solo un perfume, es una experiencia" -- FIXPARFUM ✨</span>
+            </div>
         </div>
 
         <div class="section-title">Canales Oficiales</div>
